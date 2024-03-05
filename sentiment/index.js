@@ -37,7 +37,7 @@ app.post('/sentiment', async (req, res) => {
         }
 
         logger.info(`Sentiment analysis result: ${analysisResult}`);
-
+        
         res.status(200).json({ sentimentScore: analysisResult, sentiment: sentiment });
     } catch (error) {
         logger.error(`Error performing sentiment analysis: ${error}`);
@@ -45,6 +45,7 @@ app.post('/sentiment', async (req, res) => {
         res.status(500).json({ message: 'Error performing sentiment analysis' });
     }
 });
+
 
 app.listen(port, () => {
     logger.info(`Server running on port ${port}`);
