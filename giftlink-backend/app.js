@@ -9,8 +9,6 @@ const path = require('path');
 const app = express();
 const port = 3050;
 
-app.use('/api/search', searchRoutes);
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/app', express.static(path.join(__dirname, 'public', 'react-app')));
@@ -33,7 +31,6 @@ app.use(express.json());
 
 const giftRoutes = require('./routes/giftRoutes');
 const authRoutes = require('./routes/authRoutes');
-const searchRoutes = require('./routes/searchRoutes');
 const pinoHttp = require('pino-http');
 const logger = require('./logger');
 
