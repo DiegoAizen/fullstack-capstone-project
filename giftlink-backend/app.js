@@ -1,12 +1,12 @@
-// app.js
 require('dotenv').config();
-const connectToDatabase = require('./models/db');
 const { MongoClient } = require('mongodb');
 const searchRoutes = require('./routes/searchRoutes');
 const pinoLogger = require('./logger')
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+
+const connectToDatabase = require('./models/db');
 const {loadData} = require("./util/import-mongo/index");
 
 const app = express();

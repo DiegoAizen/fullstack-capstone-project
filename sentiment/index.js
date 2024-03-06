@@ -11,9 +11,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(expressPino);
 
-
 app.post('/sentiment', async (req, res) => {
-
     const { sentence } = req.query;
 
     if (!sentence) {
@@ -37,11 +35,10 @@ app.post('/sentiment', async (req, res) => {
         }
 
         logger.info(`Sentiment analysis result: ${analysisResult}`);
-        
+
         res.status(200).json({ sentimentScore: analysisResult, sentiment: sentiment });
     } catch (error) {
         logger.error(`Error performing sentiment analysis: ${error}`);
-
         res.status(500).json({ message: 'Error performing sentiment analysis' });
     }
 });
