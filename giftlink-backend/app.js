@@ -5,9 +5,14 @@ const { MongoClient } = require('mongodb');
 const searchRoutes = require('./routes/searchRoutes');
 const pinoLogger = require('./logger')
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
+
+const {loadData} = require("./util/import-mongo/index");
+
 const app = express();
-const port = 3050;
+app.use("*",cors());
+const port = 3060;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
