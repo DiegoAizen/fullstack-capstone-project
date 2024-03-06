@@ -7,7 +7,6 @@ const pinoLogger = require('./logger')
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-
 const {loadData} = require("./util/import-mongo/index");
 
 const app = express();
